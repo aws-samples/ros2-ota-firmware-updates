@@ -1,0 +1,10 @@
+{
+    "endpoint" : "ENDPOINT",
+    "rootCAPath" : "/certs/AmazonRootCA1.pem",
+    "certificatePath" : "/certs/device.pem.crt",
+    "privateKeyPath" : "/certs/private.pem.key",
+    "port" : 8333,
+    "region": "REGION",
+    "retryWaitTime": 5,
+    "retryAttempts": 10
+}

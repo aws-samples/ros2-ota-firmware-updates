@@ -1,0 +1,5 @@
+.DS_Store
+containers/certs/*
+*.pyc
+containers/greengrass/credentials
+*.log

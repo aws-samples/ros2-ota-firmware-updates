@@ -1,0 +1,48 @@
+services:
+  registry:
+    image: "registry:2"
+    ports:
+      - "5555:5000"
+    networks:
+      - greengrass
+  greengrass:
+    init: true
+    build:
+      context: greengrass
+      dockerfile: Dockerfile
+    env_file: greengrass/env
+    volumes:
+      - ./credentials:/root/.aws/credentials:ro
+      - greengrass-data:/greengrass
+    ports:
+      - "8883:8883"
+    networks:
+      - greengrass
+  device1:
+    build:
+      context: device
+      dockerfile: Dockerfile
+    privileged: true
+    environment:
+      - DEVICE_NAME=device-thing-1
+    volumes:
+      - ./certs:/certs
+    networks:
+      - greengrass
+  device2:
+    build:
+      context: device
+      dockerfile: Dockerfile
+    privileged: true
+    environment:
+      - DEVICE_NAME=device-thing-2
+    volumes:
+      - ./certs:/certs
+    networks:
+      - greengrass
+
+networks:
+  greengrass:
+
+volumes:
+  greengrass-data:

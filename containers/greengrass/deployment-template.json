@@ -1,0 +1,36 @@
+{
+    "targetArn": "arn:aws:iot:<REGION>:<ACCOUNT>:thing/RosProvisioningGreengrassCore",
+    "deploymentName": "Deployment for RosProvisioningGreengrassCore",
+    "components": {
+        "aws.greengrass.Nucleus": {
+            "componentVersion": "2.12.6"
+        },
+        "aws.greengrass.clientdevices.Auth": {
+            "componentVersion": "2.5.0",
+            "configurationUpdate": {
+                "merge": "{\"deviceGroups\":{\"formatVersion\":\"2021-03-05\",\"definitions\":{\"MyDeviceGroup\":{\"selectionRule\":\"thingName: device-thing-*\",\"policyName\":\"MyClientDevicePolicy\"}},\"policies\":{\"MyClientDevicePolicy\":{\"AllowConnect\":{\"statementDescription\":\"Allow client devices to connect.\",\"operations\":[\"mqtt:connect\"],\"resources\":[\"*\"]},\"AllowPublish\":{\"statementDescription\":\"Allow client devices to publish to all topics.\",\"operations\":[\"mqtt:publish\"],\"resources\":[\"*\"]},\"AllowSubscribe\":{\"statementDescription\":\"Allow client devices to subscribe to all topics.\",\"operations\":[\"mqtt:subscribe\"],\"resources\":[\"*\"]}}}}}"
+            },
+            "runWith": {}
+        },
+        "aws.greengrass.clientdevices.IPDetector": {
+            "componentVersion": "2.1.9"
+        },
+        "aws.greengrass.clientdevices.mqtt.Bridge": {
+            "componentVersion": "2.3.2",
+            "configurationUpdate": {
+                "merge": "{\"mqttTopicMapping\":{\"HelloWorldIotCoreMapping\":{\"topic\":\"clients/+/hello/world\",\"source\":\"LocalMqtt\",\"target\":\"IotCore\"},\"ShadowsLocalMqttToPubsub\":{\"topic\":\"$aws/things/+/shadow/#\",\"source\":\"LocalMqtt\",\"target\":\"Pubsub\"},\"ShadowsPubsubToLocalMqtt\":{\"topic\":\"$aws/things/+/shadow/#\",\"source\":\"Pubsub\",\"target\":\"LocalMqtt\"},\"JobsLocalMqttToPubsub\":{\"topic\":\"$aws/things/+/jobs/#\",\"source\":\"LocalMqtt\",\"target\":\"IotCore\"},\"JobsPubsubToLocalMqtt\":{\"topic\":\"$aws/things/+/jobs/#\",\"source\":\"IotCore\",\"target\":\"LocalMqtt\"}}}"
+            },
+            "runWith": {}
+        },
+        "aws.greengrass.clientdevices.mqtt.Moquette": {
+            "componentVersion": "2.3.7"
+        }
+    },
+    "deploymentPolicies": {
+        "failureHandlingPolicy": "ROLLBACK",
+        "componentUpdatePolicy": {
+            "timeoutInSeconds": 60,
+            "action": "NOTIFY_COMPONENTS"
+        }
+    }
+}
