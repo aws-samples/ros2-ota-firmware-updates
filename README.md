@@ -234,6 +234,14 @@ You should get a response similar to the following:
     ]
 }
 ```
+
+### Web Application Interface
+
+For instructions on deploying and using the web-based management interface for your ROS2 OTA updates, check out the [Amplify README](./amplify/README.md). The web interface provides a user-friendly way to:
+- Monitor device firmware versions
+- Deploy updates to your fleet
+- Track deployment status
+
 ## Cleanup
 
 To tear down the CDK deployed infrastructure:

@@ -1,3 +1,4 @@
 *credentials*
 greengrass/volume
 greengrass/deployment.json
+!aws-credentials.sh

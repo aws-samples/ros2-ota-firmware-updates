@@ -1,0 +1,51 @@
+{
+  "name": "ros-ota-updates-webview",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "copy-outputs": "echo 'Copying amplify_outputs.json' && cp ./amplify_outputs.json src/ && echo 'Copy complete'",
+    "start": "yarn copy-outputs && react-scripts start",
+    "build": "yarn copy-outputs && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.7.0",
+    "@aws-amplify/backend-cli": "^1.4.2",
+    "@babel/plugin-transform-private-property-in-object": "^7.21.11",
+    "aws-cdk": "^2.167.1",
+    "aws-cdk-lib": "^2.167.1",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.24.0",
+    "python": "^0.0.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.5.5",
+    "@cloudscape-design/components": "^3.0.839",
+    "@cloudscape-design/design-tokens": "^3.0.51",
+    "@cloudscape-design/global-styles": "^1.0.32",
+    "aws-amplify": "^6.8.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

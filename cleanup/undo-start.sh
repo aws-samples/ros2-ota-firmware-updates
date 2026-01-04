@@ -27,4 +27,4 @@ if [ -d "$FIRMWARE_CERT_MOUNT_PATH" ]; then
 fi
 
 echo "Removing volume"
-docker volume rm ros-ota_greengrass-data
+$SUDO_PREFIX docker volume rm ros-ota_greengrass-data
