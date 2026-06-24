@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import DeviceList from './components/DeviceList';
 import UpdateDevice from './components/UpdateDevice';
 import { Authenticator } from '@aws-amplify/ui-react';
-import { fetchAuthSession } from '@aws-amplify/auth';
+import { fetchAuthSession } from 'aws-amplify/auth';
 import UnauthorizedPage from './components/UnauthorizedPage';
 import AppLayout from "@cloudscape-design/components/app-layout";
 import TopNavigation from "@cloudscape-design/components/top-navigation";

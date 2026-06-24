@@ -7,3 +7,4 @@ amplifyconfiguration*
 package-lock.json
 .env.development
 build/
+dist/

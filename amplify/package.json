@@ -1,29 +1,14 @@
 {
   "name": "ros-ota-updates-webview",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
     "copy-outputs": "echo 'Copying amplify_outputs.json' && cp ./amplify_outputs.json src/ && echo 'Copy complete'",
-    "start": "yarn copy-outputs && react-scripts start",
-    "build": "yarn copy-outputs && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@aws-amplify/backend": "^1.7.0",
-    "@aws-amplify/backend-cli": "^1.4.2",
-    "@babel/plugin-transform-private-property-in-object": "^7.21.11",
-    "aws-cdk": "^2.167.1",
-    "aws-cdk-lib": "^2.167.1",
-    "constructs": "^10.4.2",
-    "esbuild": "^0.24.0",
-    "python": "^0.0.4",
-    "tsx": "^4.19.2",
-    "typescript": "^5.6.3"
+    "dev": "yarn copy-outputs && vite",
+    "start": "yarn copy-outputs && vite",
+    "build": "yarn copy-outputs && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.5.5",
@@ -31,10 +16,21 @@
     "@cloudscape-design/design-tokens": "^3.0.51",
     "@cloudscape-design/global-styles": "^1.0.32",
     "aws-amplify": "^6.8.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.28.0",
-    "react-scripts": "^5.0.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.7.0",
+    "@aws-amplify/backend-cli": "^1.4.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "aws-cdk": "^2.175.0",
+    "aws-cdk-lib": "^2.175.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^6.3.5"
   },
   "browserslist": {
     "production": [

@@ -11,13 +11,13 @@
   },
   "devDependencies": {
     "@types/node": "20.10.4",
-    "aws-cdk": "2.115.0",
+    "aws-cdk": "^2.175.0",
     "ts-node": "^10.9.2",
     "typescript": "~5.3.3"
   },
   "dependencies": {
-    "@aws-cdk/aws-amplify-alpha": "^2.115.0-alpha.0",
-    "aws-cdk-lib": "2.115.0",
+    "@aws-cdk/aws-amplify-alpha": "^2.175.0-alpha.0",
+    "aws-cdk-lib": "^2.175.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"
   }
