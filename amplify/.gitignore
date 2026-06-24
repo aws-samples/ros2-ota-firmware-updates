@@ -4,6 +4,6 @@ node_modules
 amplify_outputs*
 amplifyconfiguration*
 .env
-package-lock.json
 .env.development
 build/
+dist/

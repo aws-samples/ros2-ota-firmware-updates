@@ -7,6 +7,18 @@ This project is a web application for performing over-the-air firmware updates f
 - Node.js (version 20.18.1)
 - AWS CLI configured with appropriate credentials
 
+## Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Copy amplify outputs and start dev server
+npm run dev
+```
+
+The app runs on `http://localhost:5173` by default.
+
 ## Deployment Instructions
 
 ### 1. Deploy Infrastructure
@@ -73,4 +85,3 @@ To remove all deployed resources:
 cd infrastructure
 npx aws-cdk destroy
 ```
-
